@@ -1,2 +1,16 @@
-<h1>Houses#show</h1>
-<p>Find me in app/views/houses/show.html.erb</p>
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= @house.name %></h1>
+    <img class="house-image" src="http://www.itamichintai.com/01zoom.jpg" width="200" height="200">
+
+    <h3>Address</h3>
+    <p><%= @house.address %></p>
+
+    <h3>Note</h3>
+    <p><%= @house.note %></p>
+
+    <hr>
+    <%= link_to 'Edit', edit_house_path(@house), class: "btn btn-default" %>
+    <%= link_to 'Delete', house_path(@house), method: :delete, class: "btn btn-danger" %>
+  </div>
+</div>
