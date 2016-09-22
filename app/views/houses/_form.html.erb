@@ -1,4 +1,17 @@
 <%= form_for(@house) do |f| %>
+
+  <% if @house.errors.any? %>
+    <div class="alert alert-danger">
+      <p><b><%= @house.errors.count %>件のエラーがあります</b></p>
+
+      <ul>
+        <% @house.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <div class="form-group">
     <%= f.label :name %><br>
     <%= f.text_field :name, class: "form-control" %>

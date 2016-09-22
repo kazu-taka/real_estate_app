@@ -14,8 +14,11 @@ class HousesController < ApplicationController
 
   def create
     @house = House.new(house_params)
-    @house.save
-    redirect_to @house
+    if @house.save
+      redirect_to @house
+    else
+      render :new
+    end
   end
 
   def edit
