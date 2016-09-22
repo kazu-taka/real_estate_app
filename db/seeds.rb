@@ -1,4 +1,4 @@
-30.times do
+100.times do
   House.create(
     name:    'メゾン' + ForgeryJa(:name).last_name,
     price:   ForgeryJa(:monetary).popularity_money,
