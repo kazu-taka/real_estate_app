@@ -1,7 +1,15 @@
-<% @houses.each do |house| %>
-  <p><%= house.name %></p>
-  <%= image_tag "http://www.itamichintai.com/01zoom.jpg", width: 200 , height: 200 %>
-  <p>所在地: <%= house.address %></p>
-  <p><%= number_to_currency(house.price) %></p>
-  <%= link_to 'Read More', house_path(house) %>
-<% end %>
+<div class="row">
+  <div class="houses">
+    <% @houses.each do |house| %>
+      <div class="col-xs-6 col-md-4">
+        <div class="house-box">
+          <p class="house-name"><%= house.name %></p>
+          <img class="house-image" src="http://www.itamichintai.com/01zoom.jpg" width="200" height="200">
+          <p class="house-address">所在地: <%= house.address %></p>
+          <p class="house-price"><%= number_to_currency(house.price) %></p>
+          <%= link_to 'Read More', house_path(house), class: "btn btn-default" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
