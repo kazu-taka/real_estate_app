@@ -25,8 +25,11 @@ class HousesController < ApplicationController
   end
 
   def update
-    @house.update(house_params)
-    redirect_to @house
+    if @house.update(house_params)
+      redirect_to @house
+    else
+      render :edit
+    end
   end
 
   def destroy
