@@ -9,6 +9,10 @@
     <h3>Note</h3>
     <p><%= @house.note %></p>
 
+    <h3>売り主情報</h3>
+    <p>氏名: <%= @house.seller.name %></p>
+    <p>Email: <%= @house.seller.email %></p>
+
     <hr>
     <%= link_to 'Edit', edit_house_path(@house), class: "btn btn-default" %>
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-house">Delete</button>

@@ -7,6 +7,7 @@
           <img class="house-image" src="http://www.itamichintai.com/01zoom.jpg" width="200" height="200">
           <p class="house-address">所在地: <%= house.address %></p>
           <p class="house-price"><%= number_to_currency(house.price) %></p>
+          <p class="house-seller">売り主: <%= house.seller.name %></p>
           <%= link_to 'Read More', house_path(house), class: "btn btn-default" %>
         </div>
       </div>
