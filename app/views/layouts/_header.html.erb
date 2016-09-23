@@ -9,12 +9,15 @@
       </button>
       <%= link_to "HOME", root_path, class: "navbar-brand" %>
     </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="navbar-collapse-menu">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">ダミー</a></li>
-        <li><%= link_to '物件登録', new_house_path %></li>
+        <% if user_signed_in? %>
+          <li><%= link_to "設定変更", edit_user_registration_path %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+          <li><%= link_to "新規登録", new_user_registration_path %></li>
+          <li><%= link_to "ログイン", new_user_session_path %></li>
+        <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
