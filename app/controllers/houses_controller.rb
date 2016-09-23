@@ -2,7 +2,8 @@ class HousesController < ApplicationController
   before_action :set_house, only: [:show, :edit, :update, :destroy]
 
   def index
-    @houses = House.all
+    # @houses = House.all
+    @houses = House.page(params[:page]).per(9)
   end
 
   def show
