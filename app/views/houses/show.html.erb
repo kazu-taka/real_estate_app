@@ -17,6 +17,18 @@
     <%= link_to 'Edit', edit_house_path(@house), class: "btn btn-default" %>
     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#delete-house">Delete</button>
 
+    <h2>コメント</h2>
+    <% @comments.each do |comment| %>
+      <div class="media">
+        <div class="media-body">
+          <%= simple_format(comment.body) %>
+          <p class="text-muted">
+            投稿記事:<%= comment.created_at.strftime('%Y%m%d %H:%M') %>
+          </p>
+        </div>
+      </div>
+    <% end %>
+
     <hr>
     <%= form_for @comment do |f| %>
       <div class="form-group">

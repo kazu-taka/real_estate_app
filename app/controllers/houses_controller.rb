@@ -9,6 +9,8 @@ class HousesController < ApplicationController
 
   def show
     @comment = Comment.new
+    # @comments = Comment.where(house_id: params[:id])
+    @comments = @house.comments
   end
 
   def new
