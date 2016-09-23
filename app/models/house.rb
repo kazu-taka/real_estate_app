@@ -1,4 +1,5 @@
 class House < ActiveRecord::Base
+  belongs_to :seller
   validates :name,
     presence: true, length: { maximum: 100 }
   validates :price,
