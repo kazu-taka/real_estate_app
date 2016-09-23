@@ -9,7 +9,10 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-
+    @comment = Comment.find(params[:id])
+    house_id = @comment.house.id
+    @comment.destroy
+    redirect_to house_url(house_id)
   end
 
   private
