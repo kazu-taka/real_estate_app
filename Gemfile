@@ -13,6 +13,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'kaminari'
 gem 'devise'
+gem 'json', git: 'https://github.com/flori/json.git', branch: 'v1.8'
 
 group :development, :test do
   gem 'byebug'
